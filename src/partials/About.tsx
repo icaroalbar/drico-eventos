@@ -6,23 +6,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Icon from "@/components/ui/icon";
+import Icon, { IconNames } from "@/components/ui/icon";
 
 const data = [
   {
-    icon: "Users",
+    icon: "Users" as IconNames,
     description: "Equipe experiente e criativa, + 15 anos no mercado.",
   },
   {
-    icon: "View",
+    icon: "View" as IconNames,
     description: "Soluções inovadoras e estratégicas.",
   },
   {
-    icon: "Award",
+    icon: "Award" as IconNames,
     description: "+ 500 Ações e eventos realizados.",
   },
   {
-    icon: "BadgeCheck",
+    icon: "BadgeCheck" as IconNames,
     description: "+ 50 clientes atendidos",
   },
 ];
