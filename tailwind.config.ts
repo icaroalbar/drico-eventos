@@ -74,6 +74,7 @@ const config = {
       },
       backgroundImage: {
         header: "url('/header.jpg')",
+        action: "url('/actions.png')",
       },
     },
   },
