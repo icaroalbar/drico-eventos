@@ -53,7 +53,7 @@ export default function Partners() {
                           width={100}
                           height={100}
                           alt={`Logo ${item}`}
-                          className="pt-1 grayscale"
+                          className="pt-1"
                         />
                       </CardContent>
                     </Card>

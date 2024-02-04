@@ -1,10 +1,11 @@
-import { AlignJustify, Instagram, ScanFace } from "lucide-react";
+import { AlignJustify, Hand, Instagram, ScanFace } from "lucide-react";
 import React from "react";
 import { Button } from "../components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -16,19 +17,21 @@ export default function Nav() {
     <nav className="border-b">
       <div className="container flex items-center justify-between  py-3">
         <div className="flex items-center gap-x-2">
-          <Image
-            src="/logo.png"
-            width={40}
-            height={40}
-            alt="Logo Drico eventos"
-            className="pt-1"
-          />
-          <div className="uppercase">
-            <p className="text-xl font-bold">
-              drico <span className="text-primary">eventos</span>
-            </p>
-            <p className="text-xs">acessoria em marketing</p>
-          </div>
+          <Link href={"/"} className="flex items-center gap-x-2">
+            <Image
+              src="/logo.png"
+              width={40}
+              height={40}
+              alt="Logo Drico eventos"
+              className="pt-1"
+            />
+            <div className="uppercase">
+              <p className="text-xl font-bold">
+                drico <span className="text-primary">eventos</span>
+              </p>
+              <p className="text-xs">acessoria em marketing</p>
+            </div>
+          </Link>
         </div>
         <ul className="flex items-center gap-x-16">
           <Button
@@ -65,21 +68,22 @@ export default function Nav() {
               <SheetContent>
                 <SheetHeader>
                   <SheetTitle>Menu</SheetTitle>
-                  {/* <SheetDescription>
-                  Make changes to your profile here. Click save when done.
-                </SheetDescription> */}
                 </SheetHeader>
                 <Link
-                  href={"#"}
+                  href={"/partners"}
                   className="flex items-center gap-x-2 p-3 hover:bg-primary"
                 >
-                  link
+                  <SheetClose className="flex w-full items-center gap-x-2 text-start">
+                    <Hand /> Seja um parceiro
+                  </SheetClose>
                 </Link>
                 <Link
-                  href={"#"}
+                  href={"/partners"}
                   className="flex items-center gap-x-2 p-3 hover:bg-primary"
                 >
-                  link
+                  <SheetClose className="flex w-full items-center gap-x-2 text-start">
+                    <ScanFace /> Ative sua marca
+                  </SheetClose>
                 </Link>
               </SheetContent>
             </Sheet>

@@ -2,6 +2,7 @@ import About from "@/partials/About";
 import Actions from "@/partials/Actions";
 import Header from "@/partials/Header";
 import Partners from "@/partials/Partners";
+import Cases from "@/partials/Cases";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <About />
       <Actions />
       <Partners />
+      <Cases />
     </main>
   );
 }
