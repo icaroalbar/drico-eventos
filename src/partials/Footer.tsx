@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import Icon from "@/components/ui/icon";
 
 type MenuItem = {
   icon?: string | any;
   label: string;
-  href: string;
+  href?: string | any;
 };
 
 type MenuGroup = {
@@ -21,56 +22,48 @@ type MenuData = {
 export const data: MenuData = {
   groupA: [
     {
-      label: "home",
-      href: "/#",
+      label: "Home",
+      href: "#",
     },
     {
-      label: "sobre",
-      href: "/#",
+      label: "Sobre",
+      href: "#",
     },
     {
-      label: "ações",
-      href: "/#",
+      label: "Ações",
+      href: "#",
     },
     {
-      label: "parceiros",
-      href: "/#",
+      label: "Parceiros",
+      href: "#",
     },
     {
-      label: "casos",
-      href: "/#",
+      label: "Casos",
+      href: "#",
     },
   ],
   groupB: [
     {
-      label: "seja um parceiro",
-      href: "/#",
+      label: "Seja um parceiro",
+      href: "#",
     },
     {
-      label: "ative sua marca",
-      href: "/#",
+      label: "Ative sua marca",
+      href: "#",
     },
   ],
   groupC: [
     {
-      label: "home",
-      href: "/#",
+      icon: "Phone",
+      label: "(21) 00000-0000",
     },
     {
-      label: "sobre",
-      href: "/#",
+      icon: "Clock",
+      label: "Segunda a sexta, 08h às 18h exceto feriado.",
     },
     {
-      label: "ações",
-      href: "/#",
-    },
-    {
-      label: "parceiros",
-      href: "/#",
-    },
-    {
-      label: "casos",
-      href: "/#",
+      icon: "Mail",
+      label: "contato@dricoeventos.com.br",
     },
   ],
 };
@@ -99,16 +92,23 @@ export default function Footer() {
         {Object.values(data).map((group, index) => (
           <div key={index} className="col-span-1">
             <h3 className="border-b-2 pb-2 font-semibold">Drico Eventos</h3>
-            <ul className="px-2 capitalize">
+            <ul className="px-2 pt-2 text-sm">
               <React.Fragment>
                 {group.map((item, itemIndex) => (
                   <li key={itemIndex} className="py-1">
-                    <Link
-                      href={item.href}
-                      className="font-extralight underline-offset-4 transition-colors hover:font-light hover:underline"
-                    >
-                      {item.label}
-                    </Link>
+                    {item.icon ? (
+                      <p className="flex items-start gap-x-2 font-light">
+                        <Icon name={item.icon} className="pt-1" size={20} />
+                        {item.label}
+                      </p>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="font-extralight underline-offset-4 transition-colors hover:font-light hover:underline"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </React.Fragment>
