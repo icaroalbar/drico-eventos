@@ -71,8 +71,8 @@ export const data: MenuData = {
 export default function Footer() {
   return (
     <footer>
-      <div className="container grid grid-cols-5 justify-around gap-x-3 py-10">
-        <div className="col-span-2 flex items-center gap-x-2">
+      <div className="container grid grid-cols-5 justify-around gap-3 py-10">
+        <div className="col-span-5 mb-5 flex items-center justify-center md:justify-start lg:col-span-2">
           <Link href={"/"} className="flex items-center gap-x-2">
             <Image
               src="/logo.png"
@@ -90,7 +90,10 @@ export default function Footer() {
           </Link>
         </div>
         {Object.values(data).map((group, index) => (
-          <div key={index} className="col-span-1">
+          <div
+            key={index}
+            className="col-span-5 mb-5 md:col-span-2 lg:col-span-1"
+          >
             <h3 className="border-b-2 pb-2 font-semibold">Drico Eventos</h3>
             <ul className="px-2 pt-2 text-sm">
               <React.Fragment>
