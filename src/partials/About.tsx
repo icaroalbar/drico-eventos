@@ -29,7 +29,10 @@ const data = [
 
 export default function About() {
   return (
-    <section className="flex flex-col items-center justify-around gap-y-10 border-t py-20">
+    <section
+      className="flex flex-col items-center justify-around gap-y-10 border-t py-20"
+      id="about"
+    >
       <h1 className="lg: max-w-3xl scroll-m-20 px-10 text-center text-2xl font-extrabold tracking-tight lg:text-4xl ">
         Engaje clientes com ações impactantes, transforme-os em
         <span className="text-primary"> fãs do seu negócio!</span>

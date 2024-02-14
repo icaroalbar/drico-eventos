@@ -29,7 +29,10 @@ const data = [
 export default function Partners() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
-    <section className="container flex flex-col items-center justify-center py-16">
+    <section
+      className="container flex flex-col items-center justify-center py-16"
+      id="partners"
+    >
       <div className="space-y-5">
         <h1 className="max-w-3xl scroll-m-20 text-center text-2xl font-extrabold tracking-tight lg:text-4xl xl:text-start ">
           Nossos principais

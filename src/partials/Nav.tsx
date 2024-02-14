@@ -16,7 +16,7 @@ import Icon from "@/components/ui/icon";
 
 export default function Nav() {
   return (
-    <nav className="border-b">
+    <nav className="border-b" id="header">
       <div className="container flex items-center justify-between  py-3">
         <div className="flex items-center gap-x-2">
           <Link href={"/"} className="flex items-center gap-x-2">

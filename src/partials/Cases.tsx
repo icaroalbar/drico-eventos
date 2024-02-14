@@ -17,7 +17,10 @@ const data = ["vivo", "corona", "claro", "pernambucanas"];
 export default function Cases() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
   return (
-    <section className="flex flex-col items-center justify-center bg-action bg-cover bg-bottom py-24">
+    <section
+      className="flex flex-col items-center justify-center bg-action bg-cover bg-bottom py-24"
+      id="cases"
+    >
       <div className="space-y-5">
         <h1 className="max-w-3xl scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl ">
           Cases <span className="text-primary"> incríveis</span> que fizemos{" "}

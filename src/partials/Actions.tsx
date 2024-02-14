@@ -25,7 +25,10 @@ const data = [
 
 export default function Actions() {
   return (
-    <section className="border-t bg-action bg-cover bg-bottom py-20">
+    <section
+      className="border-t bg-action bg-cover bg-bottom py-20"
+      id="actions"
+    >
       <div className="text-center lg:ml-16 lg:text-start">
         <h3 className="scroll-m-20 px-2 text-2xl font-semibold tracking-tight">
           Impulsione o seu negócio com
