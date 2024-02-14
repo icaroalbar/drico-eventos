@@ -10,60 +10,70 @@ type MenuItem = {
 };
 
 type MenuGroup = {
-  [key: string]: MenuItem[];
+  title: string;
+  items: MenuItem[];
 };
 
 type MenuData = {
-  groupA: MenuGroup["groupA"];
-  groupB: MenuGroup["groupB"];
-  groupC: MenuGroup["groupC"];
+  groups: MenuGroup[];
 };
 
 export const data: MenuData = {
-  groupA: [
+  groups: [
     {
-      label: "Home",
-      href: "#",
+      title: "Menu",
+      items: [
+        {
+          label: "Home",
+          href: "#",
+        },
+        {
+          label: "Sobre",
+          href: "#",
+        },
+        {
+          label: "Ações",
+          href: "#",
+        },
+        {
+          label: "Parceiros",
+          href: "#",
+        },
+        {
+          label: "Casos",
+          href: "#",
+        },
+      ],
     },
     {
-      label: "Sobre",
-      href: "#",
+      title: "Serviços",
+      items: [
+        {
+          label: "Seja um parceiro",
+          href: "#",
+        },
+        {
+          label: "Ative sua marca",
+          href: "#",
+        },
+      ],
     },
     {
-      label: "Ações",
-      href: "#",
-    },
-    {
-      label: "Parceiros",
-      href: "#",
-    },
-    {
-      label: "Casos",
-      href: "#",
-    },
-  ],
-  groupB: [
-    {
-      label: "Seja um parceiro",
-      href: "#",
-    },
-    {
-      label: "Ative sua marca",
-      href: "#",
-    },
-  ],
-  groupC: [
-    {
-      icon: "Phone",
-      label: "(21) 99686-6342",
-    },
-    {
-      icon: "Clock",
-      label: "Segunda a sexta, 08h às 18h exceto feriado.",
-    },
-    {
-      icon: "Mail",
-      label: "contato@dricoeventos.com.br",
+      title: "Contato",
+      items: [
+        {
+          icon: "Phone",
+          label: "(21) 99686-6342",
+        },
+        {
+          icon: "Clock",
+          label: "Segunda a sexta, 08h às 18h exceto feriado.",
+        },
+        {
+          icon: "Mail",
+          label: "contato@dricoeventos.com.br",
+        },
+      ],
     },
   ],
 };
@@ -89,15 +99,15 @@ export default function Footer() {
             </div>
           </Link>
         </div>
-        {Object.values(data).map((group, index) => (
+        {data.groups.map((group, index) => (
           <div
             key={index}
             className="col-span-5 mb-5 md:col-span-2 lg:col-span-1"
           >
-            <h3 className="border-b-2 pb-2 font-semibold">Drico Eventos</h3>
+            <h3 className="border-b-2 pb-2 font-semibold">{group.title}</h3>
             <ul className="px-2 pt-2 text-sm">
               <React.Fragment>
-                {group.map((item, itemIndex) => (
+                {group.items.map((item, itemIndex) => (
                   <li key={itemIndex} className="py-1">
                     {item.icon ? (
                       <p className="flex items-start gap-x-2 font-light">
