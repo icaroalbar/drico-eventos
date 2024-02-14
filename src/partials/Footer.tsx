@@ -55,7 +55,7 @@ export const data: MenuData = {
   groupC: [
     {
       icon: "Phone",
-      label: "(21) 00000-0000",
+      label: "(21) 99686-6342",
     },
     {
       icon: "Clock",

@@ -39,7 +39,9 @@ export default function Header() {
         >
           <Link
             target="_blank"
-            href={"https://www.instagram.com/dricoeventos/"}
+            href={
+              "https://api.whatsapp.com/send?phone=5521996866342&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
+            }
           >
             <FaWhatsapp size={30} />
           </Link>

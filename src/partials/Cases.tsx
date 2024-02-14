@@ -23,7 +23,7 @@ export default function Cases() {
           Cases <span className="text-primary"> incríveis</span> que fizemos{" "}
           <span className="text-primary">acontecer:</span>
         </h1>
-        <div className="flex gap-x-5">
+        <div className="flex justify-center gap-x-5 xl:max-w-5xl">
           <Carousel
             plugins={[plugin.current]}
             onMouseEnter={plugin.current.stop}
@@ -32,22 +32,21 @@ export default function Cases() {
           >
             <CarouselContent>
               {data.map((item, index) => (
-                <CarouselItem
-                  key={index}
-                  className="py-3 md:basis-1/2 lg:basis-1/3"
-                >
-                  <CardContent className="flex flex-col items-center justify-center gap-y-4 p-0 ">
-                    <Image
-                      src={`/case_${item}.jpg`}
-                      width={250}
-                      height={250}
-                      alt={`Evento ${item}`}
-                      className="aspect-[8/6] pt-1"
-                    />
-                    <CardTitle className="text-2xl capitalize">
-                      {item}
-                    </CardTitle>
-                  </CardContent>
+                <CarouselItem key={index} className="max-w-xs">
+                  <div className="p-1">
+                    <CardContent className="flex aspect-square flex-col items-center justify-center gap-y-3 p-6">
+                      <Image
+                        src={`/case_${item}.jpg`}
+                        width={250}
+                        height={250}
+                        alt={`Evento ${item}`}
+                        className="aspect-[8/6] pt-1"
+                      />
+                      <CardTitle className="text-2xl capitalize">
+                        {item}
+                      </CardTitle>
+                    </CardContent>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>

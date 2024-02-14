@@ -27,27 +27,26 @@ const data = [
 ];
 
 export default function Partners() {
-  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: false }));
+  const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
-    <section className="flex flex-col items-center justify-center py-24">
+    <section className="container flex flex-col items-center justify-center py-16">
       <div className="space-y-5">
-        <h1 className="max-w-3xl scroll-m-20 text-3xl font-extrabold tracking-tight lg:text-4xl ">
+        <h1 className="max-w-3xl scroll-m-20 text-center text-2xl font-extrabold tracking-tight lg:text-4xl xl:text-start ">
           Nossos principais
           <span className="text-primary"> parceiros:</span>
         </h1>
-        <div className="flex gap-x-5">
+        <div className="flex justify-center gap-x-5 xl:max-w-5xl">
           <Carousel
             plugins={[plugin.current]}
-            className="max-w-5xl"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
           >
             <CarouselContent>
               {data.map((item, index) => (
-                <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={index} className="max-w-xs">
                   <div className="p-1">
                     <Card>
-                      <CardContent className="flex aspect-[6/3] items-center justify-center p-6">
+                      <CardContent className="flex aspect-square items-center justify-center p-6">
                         <Image
                           src={`/${item}_logo.png`}
                           width={100}
