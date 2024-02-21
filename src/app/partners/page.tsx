@@ -63,7 +63,7 @@ export default function Partners() {
   }
 
   return (
-    <main className="bg-[#09122b] py-10">
+    <main className="bg-[#13161b] py-10">
       <div className="container grid grid-cols-2">
         <div className="col-span-1">01</div>
         <div className="col-span-2 lg:col-span-1">
@@ -84,8 +84,7 @@ export default function Partners() {
                             placeholder={`Digite sua mensagem`}
                             {...field}
                             className={`bg-transparent ring-primary focus:ring-primary ${
-                              form.formState.errors[item.name] &&
-                              "border-red-800"
+                              form.formState.errors.message && "border-red-800"
                             }`}
                           />
                         ) : (
@@ -93,7 +92,8 @@ export default function Partners() {
                             placeholder={`Digite seu ${item.label}`}
                             {...field}
                             className={`bg-transparent ring-primary focus:ring-primary ${
-                              form.formState.errors.name && "border-red-800"
+                              form.formState.errors[item.name] &&
+                              "border-red-800"
                             }`}
                           />
                         )}
