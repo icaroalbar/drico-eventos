@@ -15,9 +15,11 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
+type FormFieldName = "name" | "phone" | "email" | "message";
+
 type FormProps = {
   label: string;
-  name: "name" | "phone" | "email" | "message";
+  name: FormFieldName;
 };
 
 export const data: FormProps[] = [
@@ -84,7 +86,8 @@ export default function Partners() {
                             placeholder={`Digite sua mensagem`}
                             {...field}
                             className={`bg-transparent ring-primary focus:ring-primary ${
-                              form.formState.errors.message && "border-red-800"
+                              form.formState.errors[item.name] &&
+                              "border-red-800"
                             }`}
                           />
                         ) : (
