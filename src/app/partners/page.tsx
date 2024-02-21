@@ -22,7 +22,7 @@ type FormProps = {
   name: FormFieldName;
 };
 
-export const data: FormProps[] = [
+const data: FormProps[] = [
   {
     label: "nome",
     name: "name",
