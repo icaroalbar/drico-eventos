@@ -3,6 +3,8 @@ import Link from "next/link";
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 
+const dataButtons = [{ label: "Marketing promocional" }, { label: "Eventos" }];
+
 export default function Header() {
   return (
     <section className="bg-header bg-cover">
@@ -17,19 +19,16 @@ export default function Header() {
             </h1>
           </div>
           <div className="space-x-5">
-            <Button
-              size={"lg"}
-              variant={"ghost"}
-              className="hover:bg-bg-[#61AE6D30] rounded-xl border border-primary bg-[#61AE6D30] text-white hover:border-white"
-            >
-              Marketing promocional
-            </Button>
-            <Button
-              size={"lg"}
-              className="rounded-xl border border-primary bg-[#61AE6D30] text-white hover:border-white hover:bg-[#61AE6D30]"
-            >
-              Eventos
-            </Button>
+            {dataButtons.map((item, index) => (
+              <Button
+                key={index}
+                asChild
+                size={"lg"}
+                className="hover:bg-bg-[#61AE6D30] rounded-xl border border-primary bg-[#61AE6D30] text-white hover:border-white"
+              >
+                <Link href={"/partners"}>{item.label}</Link>
+              </Button>
+            ))}
           </div>
         </div>
         <Button

@@ -4,6 +4,9 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
+import Link from "next/link";
+import Image from "next/image";
 import {
   Form,
   FormControl,
@@ -66,8 +69,33 @@ export default function Partners() {
 
   return (
     <main className="bg-[#13161b] py-10">
-      <div className="container grid grid-cols-2">
-        <div className="col-span-1">01</div>
+      <div className="container grid grid-cols-2 gap-x-5">
+        <div className="col-span-1">
+          <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
+            Fale conosco
+          </h2>
+          <p className="text-justify leading-7 [&:not(:first-child)]:mt-6">
+            Estamos dispostos a sanar quaisquer dúvidas que possam surgir. Caso
+            queira falar conosco, basta preencher o formulário ao lado ou entrar
+            em contato conosco através de nosso WhatsApp apontando a câmera do
+            seu celular para o QR code abaixo ou{" "}
+            <Link
+              target="_blank"
+              href="https://api.whatsapp.com/send?phone=5521996866342&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
+              className="inline-flex items-center gap-x-1 text-primary hover:underline"
+            >
+              clicando aqui <Icon name={"ExternalLink"} size={17} />
+            </Link>
+            .
+          </p>
+          <Image
+            src="/qr_code.jpg"
+            width={350}
+            height={40}
+            alt="Logo Drico eventos"
+            className="mx-auto pt-1"
+          />
+        </div>
         <div className="col-span-2 lg:col-span-1">
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">

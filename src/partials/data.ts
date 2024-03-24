@@ -45,11 +45,11 @@ export const data: MenuData = {
       items: [
         {
           label: "Seja um parceiro",
-          href: "#",
+          href: "/partners",
         },
         {
           label: "Ative sua marca",
-          href: "#",
+          href: "/partners",
         },
       ],
     },
@@ -58,7 +58,7 @@ export const data: MenuData = {
       items: [
         {
           icon: "Phone",
-          label: "(21) 99686-6342",
+          label: "(21) 97245-1303",
         },
         {
           icon: "Clock",

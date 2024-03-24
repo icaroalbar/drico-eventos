@@ -41,7 +41,7 @@ export default function Nav() {
             variant={"ghost"}
             className="hidden rounded-xl hover:bg-white/20 hover:text-primary md:flex"
           >
-            <Link href={"#"} className="flex items-center gap-x-2">
+            <Link href={"/partners"} className="flex items-center gap-x-2">
               <Icon name="ScanFace" /> Ative sua marca
             </Link>
           </Button>
@@ -102,7 +102,9 @@ export default function Nav() {
                 </Link>
                 <Link
                   target="_blank"
-                  href={"https://www.instagram.com/dricoeventos/"}
+                  href={
+                    "https://api.whatsapp.com/send?phone=5521996866342&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
+                  }
                   className="flex items-center gap-x-2 p-3 hover:bg-primary"
                 >
                   <SheetClose className="flex w-full items-center gap-x-2 text-start">
