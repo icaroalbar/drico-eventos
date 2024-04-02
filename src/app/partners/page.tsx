@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import axios from "axios";
 
 type FormFieldName = "name" | "phone" | "email" | "message";
 
@@ -62,9 +63,10 @@ export default function Partners() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // form.reset();
     console.log(values);
+    axios.post("./api/hello", values);
   }
 
   return (
@@ -81,7 +83,7 @@ export default function Partners() {
             seu celular para o QR code abaixo ou{" "}
             <Link
               target="_blank"
-              href="https://api.whatsapp.com/send?phone=5521996866342&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
+              href="https://api.whatsapp.com/send?phone=5521972451303&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
               className="inline-flex items-center gap-x-1 text-primary hover:underline"
             >
               clicando aqui <Icon name={"ExternalLink"} size={17} />
@@ -93,7 +95,7 @@ export default function Partners() {
             width={350}
             height={40}
             alt="Logo Drico eventos"
-            className="mx-auto pt-1"
+            className="mx-auto pt-10"
           />
         </div>
         <div className="col-span-2 lg:col-span-1">
