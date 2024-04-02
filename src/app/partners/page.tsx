@@ -83,7 +83,7 @@ export default function Partners() {
             seu celular para o QR code abaixo ou{" "}
             <Link
               target="_blank"
-              href="https://api.whatsapp.com/send?phone=5521972451303&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
+              href="https://api.whatsapp.com/send?phone=5521972451303"
               className="inline-flex items-center gap-x-1 text-primary hover:underline"
             >
               clicando aqui <Icon name={"ExternalLink"} size={17} />
@@ -91,7 +91,7 @@ export default function Partners() {
             .
           </p>
           <Image
-            src="/qr_code.jpg"
+            src="/qr_code.png"
             width={350}
             height={40}
             alt="Logo Drico eventos"

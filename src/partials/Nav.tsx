@@ -102,9 +102,7 @@ export default function Nav() {
                 </Link>
                 <Link
                   target="_blank"
-                  href={
-                    "https://api.whatsapp.com/send?phone=5521996866342&text=Ol%C3%A1%2C%20Grupo%20HP!%20Poderia%20me%20ajudar%3F"
-                  }
+                  href={"https://api.whatsapp.com/send?phone=5521972451303"}
                   className="flex items-center gap-x-2 p-3 hover:bg-primary"
                 >
                   <SheetClose className="flex w-full items-center gap-x-2 text-start">
