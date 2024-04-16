@@ -21,7 +21,7 @@ export default function Footer() {
               <p className="text-xl font-bold">
                 drico <span className="text-primary">eventos</span>
               </p>
-              <p className="text-xs">acessoria em marketing</p>
+              {/* <p className="text-xs">acessoria em marketing</p> */}
             </div>
           </Link>
         </div>
