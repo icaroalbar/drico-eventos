@@ -2,11 +2,11 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 const transporter = nodemailer.createTransport({
-  host: "smtp.hostinger.com",
+  host: process.env.HOST_SMTP,
   port: 465,
   secure: true,
   auth: {
-    user: "icaro.albar@dricoeventos.com.br",
+    user: process.env.AUTH_USER,
     pass: "Ilae$110892",
   },
 });
@@ -14,8 +14,8 @@ const transporter = nodemailer.createTransport({
 export async function POST(request: Request) {
   const { name, email, phone, message } = await request.json();
   await transporter.sendMail({
-    from: '"Site Drico Eventos" <icaro.albar@dricoeventos.com.br>',
-    to: "icaro.albar@dricoeventos.com.br",
+    from: process.env.MESSAGE_FRON,
+    to: process.env.MESSAGE_TO,
     subject: "Mensagem do site Drico Eventos",
     html: `Nome: ${name} <br>
            Email: ${email} <br>
