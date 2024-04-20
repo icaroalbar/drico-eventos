@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 import Link from "next/link";
 import Image from "next/image";
+import { Toaster } from "@/components/ui/toaster";
 import {
   Form,
   FormControl,
@@ -18,6 +19,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import axios from "axios";
+import { toast } from "@/components/ui/use-toast";
 
 type FormFieldName = "name" | "phone" | "email" | "message";
 
@@ -64,13 +66,17 @@ export default function Partners() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // form.reset();
-    console.log(values);
+    form.reset();
     axios.post("./api/hello", values);
+    toast({
+      title: "Mensagem enviada com sucesso!",
+      description: "Em breve, nossa equipe vai entrar em contato.",
+    });
   }
 
   return (
     <main className="bg-[#13161b] py-10">
+      <Toaster />
       <div className="container grid grid-cols-2 gap-x-5">
         <div className="col-span-1">
           <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0">
